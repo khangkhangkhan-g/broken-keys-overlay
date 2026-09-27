@@ -38,14 +38,14 @@ Python is not required.
 Broken Keys Overlay is written in C# / .NET 8 using Windows Forms and Win32 APIs.
 
 
-Step-by-step installation guide
+	Step-by-step installation guide
 
-	1. Download the project
+1. Download the project
 
 Download the project ZIP file from the project/repository page, then extract it.
 Do not run the project directly while it is still inside the ZIP file.
 
-	2. Install .NET 8 SDK
+2. Install .NET 8 SDK
 
 Download the official .NET 8 SDK for Windows x64 from Microsoft:
 https://dotnet.microsoft.com/en-us/download/dotnet/8.0
@@ -58,7 +58,7 @@ dotnet --version
 
 If the displayed version starts with 8., the .NET 8 SDK has been installed successfully.
 
-	3. Build the application
+3. Build the application
 
 Open the extracted Broken Keys Overlay folder and double-click:
 
@@ -72,7 +72,7 @@ Done.
 
 The build script will create a self-contained Windows .exe file.
 
-	4. Find the application file
+4. Find the application file
 
 After the build is complete, open:
 
@@ -84,7 +84,7 @@ BrokenKeysOverlay.exe (or Run-dev)
 
 Windows may hide the .exe extension, so the file may appear simply as BrokenKeysOverlay with the file type Application.
 
-	5. First-time setup
+5. First-time setup
 1. Open BrokenKeysOverlay.exe. (or Run-dev)
 2. Select the physical keyboard keys that are broken or missing.
 3. Adjust the overlay size if needed.
