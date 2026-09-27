@@ -1,227 +1,361 @@
-[[ENG] README.txt](https://github.com/user-attachments/files/32696721/ENG.README.txt)
-Broken Keys Overlay
+from pathlib import Path
 
-A compact Windows utility that temporarily replaces one or more broken keyboard keys.
+readme = r'''<div align="center">
 
-Instead of opening the full on-screen keyboard and covering a large part of the screen, Broken Keys Overlay lets you choose only the keys you actually need. These keys appear as a small floating bar that stays above other applications while keeping the current text field or application focused.
+# ⌨️ Broken Keys Overlay
 
-The app is suitable for Windows laptops and desktop keyboards when one or more physical keys are broken, missing, or unreliable.
+### Replace only the keyboard keys that are broken — without opening a full on-screen keyboard.
 
-Developer
-Nguyen Khang Pham
-GitHub: https://github.com/khangkhangkhan-g
-Email: nguyenkhangpham1306@gmail.com
+A lightweight Windows utility that creates a compact floating key palette for broken, missing, or unreliable keyboard keys.
 
+<br>
 
+![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D6?logo=windows&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet&logoColor=white)
+![C%23](https://img.shields.io/badge/C%23-Windows%20Forms-239120?logo=csharp&logoColor=white)
+![Python](https://img.shields.io/badge/Python-Not%20Required-3776AB?logo=python&logoColor=white)
 
-	Features
-• Select only the broken or missing keys you want to replace.
-• Compact floating key bar instead of a full on-screen keyboard.
-• Always stays visible above other windows.
-• Does not intentionally steal focus from the current typing target.
-• Works with common Windows applications such as browsers, Notepad, Microsoft Word, search boxes, and standard text fields.
-• Supports letters, numbers, punctuation, navigation keys, function keys, modifier keys, and selected media/browser keys.
-• Supports combinations using virtual Ctrl, Shift, Alt, and Win.
-• Supports physical modifier + virtual key combinations.
-• Supports virtual modifier + physical key combinations.
-• Supports hold-to-repeat for keys such as Backspace, arrow keys, and letters.
-• The floating bar can be dragged to any desired position.
-• Key size and opacity can be adjusted.
-• Remembers selected keys and overlay settings.
+</div>
 
-	System requirements
-• Windows 10 or Windows 11
-• 64-bit Windows (x64) for the current build script
-• .NET 8 SDK when building from source code
+---
 
-Python is not required.
-Broken Keys Overlay is written in C# / .NET 8 using Windows Forms and Win32 APIs.
+## Overview
 
+**Broken Keys Overlay** is designed for Windows laptops and desktop keyboards with one or more broken keys.
 
-	Step-by-step installation guide
+Instead of displaying the entire Windows on-screen keyboard, the app lets you select **only the keys you need** and places them in a small floating overlay.
 
-1. Download the project
+The overlay stays above other applications while keeping the current text field focused, so you can continue typing in Chrome, Word, Notepad, search bars, and other standard Windows input fields.
 
-Download the project ZIP file from the project/repository page, then extract it.
-Do not run the project directly while it is still inside the ZIP file.
+> Example: if your physical **W** key is broken, select **W** in Broken Keys Overlay and use the floating replacement key whenever you need it.
 
-2. Install .NET 8 SDK
+---
 
-Download the official .NET 8 SDK for Windows x64 from Microsoft:
+## Features
+
+- **Only show broken keys** — no full keyboard taking over your screen.
+- **Compact floating overlay** that can be moved anywhere.
+- **Always on top** while remaining unobtrusive.
+- **Focus-preserving input** for normal Windows text fields.
+- Supports:
+  - Letters and numbers
+  - Punctuation
+  - Arrow/navigation keys
+  - Function keys
+  - `Ctrl`, `Shift`, `Alt`, and `Win`
+  - Selected media/browser keys
+- **Physical modifier + virtual key** combinations.
+- **Virtual modifier + physical key** combinations.
+- **Virtual modifier + virtual key** combinations.
+- **Hold-to-repeat** for keys such as Backspace, arrows, and letters.
+- Adjustable **overlay size** and **opacity**.
+- Remembers your selected keys and overlay settings.
+
+---
+
+## System Requirements
+
+| Requirement | Details |
+|---|---|
+| Operating system | Windows 10 or Windows 11 |
+| Architecture | Windows x64 |
+| Build requirement | .NET 8 SDK |
+| Python | **Not required** |
+| Language / Framework | C# / .NET 8 / Windows Forms / Win32 API |
+
+---
+
+## Installation
+
+### 1. Download the project
+
+Download the project ZIP from the repository and extract it to a normal folder.
+
+> Do not run the project directly from inside the ZIP archive.
+
+### 2. Install .NET 8 SDK
+
+Download the official **.NET 8 SDK for Windows x64**:
+
 https://dotnet.microsoft.com/en-us/download/dotnet/8.0
 
-Choose the SDK, not just the Runtime.
-After installation, close and reopen File Explorer or Command Prompt if necessary.
-To verify that .NET was installed correctly, open Command Prompt and run:
+Choose **SDK**, not only the Runtime.
 
+To confirm that the SDK is installed, open Command Prompt and run:
+
+```bat
 dotnet --version
+```
 
-If the displayed version starts with 8., the .NET 8 SDK has been installed successfully.
+If the result starts with `8.`, the SDK is installed correctly.
 
-3. Build the application
+### 3. Build the application
 
-Open the extracted Broken Keys Overlay folder and double-click:
+Inside the extracted project folder, double-click:
 
+```text
 build.bat
+```
 
-A Command Prompt window will open and start building the Windows application.
+Wait until the build process finishes and displays:
 
-Wait until you see:
-
+```text
 Done.
+```
 
-The build script will create a self-contained Windows .exe file.
+### 4. Run the application
 
-4. Find the application file
+Open:
 
-After the build is complete, open:
-
+```text
 bin\Release\net8.0-windows\win-x64\publish\
+```
 
-Run:
+Then run:
 
-BrokenKeysOverlay.exe (or Run-dev)
+```text
+BrokenKeysOverlay.exe
+```
 
-Windows may hide the .exe extension, so the file may appear simply as BrokenKeysOverlay with the file type Application.
+You can also use:
 
-5. First-time setup
-1. Open BrokenKeysOverlay.exe. (or Run-dev)
-2. Select the physical keyboard keys that are broken or missing.
+```text
+run-dev.bat
+```
+
+for development/testing.
+
+---
+
+## Quick Start
+
+1. Open `BrokenKeysOverlay.exe`.
+2. Select the physical keys that are broken or missing.
 3. Adjust the overlay size if needed.
-4. Click Save overlay.
-5. Click the application or text field where you want to type.
+4. Click **Save overlay**.
+5. Click the text field or application where you want to type.
 6. Click the replacement key on the floating overlay.
 
-	Example:
+### Example
 
+```text
 Physical W key is broken
-→ Select W in Broken Keys Overlay
-→ Place the cursor in Chrome / Word / Notepad
-→ Click W on the overlay
-→ The W key is sent to the currently active typing target in Windows
+        ↓
+Select W in Broken Keys Overlay
+        ↓
+Place the cursor in Chrome / Word / Notepad
+        ↓
+Click W on the overlay
+        ↓
+W is sent to the currently active typing target
+```
 
-Recommended overlay size
+---
 
-30–36 px   Compact for laptop / mouse / trackpad use
-40–44 px   Easier to use with touch
-45–48 px   Larger targets for touchscreens
+## Recommended Overlay Size
 
-The default size is designed to behave like a small floating keyboard strip rather than a full-screen on-screen keyboard.
+| Size | Recommended use |
+|---|---|
+| `30–36 px` | Laptop, mouse, or trackpad |
+| `40–44 px` | Touch-friendly use |
+| `45–48 px` | Larger touchscreen targets |
 
-	Keyboard shortcut examples
+The default layout is intentionally compact so it behaves more like a **small floating replacement-key strip** than a full on-screen keyboard.
 
-Physical Ctrl + virtual A
-→ Ctrl+A
+---
 
-Virtual Ctrl + physical A
-→ Ctrl+A
+## Keyboard Shortcut Examples
 
-Virtual Ctrl + virtual A
-→ Ctrl+A
+| Input | Result |
+|---|---|
+| Physical `Ctrl` + Virtual `A` | `Ctrl+A` |
+| Virtual `Ctrl` + Physical `A` | `Ctrl+A` |
+| Virtual `Ctrl` + Virtual `A` | `Ctrl+A` |
+| Virtual `Ctrl` + Virtual `Shift` + Physical `S` | `Ctrl+Shift+S` |
 
-Virtual Ctrl + virtual Shift + physical S
-→ Ctrl+Shift+S
+Virtual modifier keys use a **one-shot mechanism**, so you do not need to hold them with the mouse while pressing the next key.
 
-Virtual modifier keys use a one-shot mechanism, so you do not need to hold them with the mouse while waiting to press the next key.
+---
 
-	Reopen Settings
+## Reopen Settings
 
-You can reopen Settings using the overlay grip or the system tray icon.
+You can reopen the settings menu using the overlay grip or the system tray icon.
 
-Depending on the current version, you can:
-• Double-click the ⋮⋮ grip.
-• Right-click the grip.
-• Open the Broken Keys Overlay icon in the Windows system tray.
+- Double-click the `⋮⋮` grip.
+- Right-click the grip.
+- Open Broken Keys Overlay from the Windows system tray.
 
-	Important limitations and disclaimer
+---
 
-Broken Keys Overlay is a Windows-only utility.
+## Important Limitations
 
-The application does not support:
-• iOS / iPhone
-• iPadOS / iPad
-• macOS
-• Android
-• Linux
-• ChromeOS
+### Windows only
 
-The current build configuration targets Windows x64. Windows ARM64 is not officially supported by the included build script.
+Broken Keys Overlay currently supports **Windows only**.
 
-	Fn key
+It does **not** support:
 
-On most laptops, the Fn key is handled directly by firmware, the embedded controller, or a manufacturer-specific hardware layer. Windows usually does not receive Fn as a normal virtual key.
+- iOS / iPhone
+- iPadOS / iPad
+- macOS
+- Android
+- Linux
+- ChromeOS
 
-Therefore, Broken Keys Overlay cannot guarantee replacement of the Fn key.
+The included build script currently targets **Windows x64**.
 
-Manufacturer-specific keys such as brightness controls, keyboard backlight, airplane mode, performance mode, or other hardware-specific combinations may have the same limitation.
+Windows ARM64 is not officially supported by the current build configuration.
 
-Running applications as Administrator
+### Fn key
+
+On most laptops, the `Fn` key is handled by firmware, an embedded controller, or manufacturer-specific hardware.
+
+Windows often does not expose `Fn` as a normal virtual key.
+
+Because of this, **Broken Keys Overlay cannot guarantee replacement of the Fn key**.
+
+Manufacturer-specific functions such as:
+
+- Brightness controls
+- Keyboard backlight
+- Airplane mode
+- Performance mode
+- Other hardware-specific combinations
+
+may have similar limitations.
+
+### Administrator permissions
 
 Windows restricts simulated input between applications running at different integrity levels.
 
-If the target application is running with Run as Administrator while Broken Keys Overlay is running normally, Windows may block the injected input.
+If the target application is running as **Administrator** while Broken Keys Overlay is running normally, Windows may block the injected input.
 
-For normal applications, do not run the app as Administrator unless necessary.
+For normal applications, avoid running Broken Keys Overlay as Administrator unless necessary.
 
-	Games and special software
+### Games and special software
 
-Some games, anti-cheat systems, Remote Desktop sessions, virtual machines, secure desktop environments, applications using Raw Input, or software with custom keyboard handling may ignore simulated input.
+Some applications may ignore simulated input, including:
+
+- Games
+- Anti-cheat systems
+- Remote Desktop sessions
+- Virtual machines
+- Secure desktop environments
+- Raw Input applications
+- Software with custom keyboard handling
 
 Compatibility with these cases is not guaranteed.
 
-Windows security screens
+### Windows security screens
 
-The application is not designed to control Windows secure screens such as:
-• Windows sign-in screen
-• UAC secure desktop
-• Ctrl+Alt+Delete screen
+Broken Keys Overlay is not designed to control:
 
-	Not a hardware repair tool
+- Windows sign-in screen
+- UAC secure desktop
+- `Ctrl+Alt+Delete` screen
 
-Broken Keys Overlay is only a temporary software workaround. It does not repair the physical keyboard and does not diagnose hardware faults.
+### Not a hardware repair tool
 
-If the keyboard is damaged by liquid, oxidation, a loose keyboard cable, a failed switch, or a motherboard issue, hardware repair may still be required.
+Broken Keys Overlay is a software workaround.
 
-	Troubleshooting
+It does not repair or diagnose physical keyboard hardware.
 
-Error: '.NET 8 SDK was not found'
+If your keyboard is damaged by liquid, oxidation, a loose cable, failed switches, or a motherboard issue, hardware repair may still be required.
+
+---
+
+## Troubleshooting
+
+### `.NET 8 SDK was not found`
 
 Install the official .NET 8 SDK for Windows x64:
 
 https://dotnet.microsoft.com/en-us/download/dotnet/8.0
 
-Then close and reopen the project folder and run build.bat again.
+Then reopen the project folder and run:
 
-The overlay opens, but pressing a key does not type anything
+```text
+build.bat
+```
+
+again.
+
+### The overlay opens, but key presses do not type anything
 
 Check the following:
+
 1. Make sure a normal text field is focused before clicking the overlay.
-2. Test with Notepad first.
-3. Check whether the target application is running as Administrator while the overlay is running normally.
+2. Test with **Notepad** first.
+3. Check whether the target application is running as Administrator.
 4. Test a simple letter key before trying shortcuts or special keys.
-5. Restart the overlay if a previous test left a modifier in an active state.
+5. Restart the overlay if a modifier was left active during a previous test.
 
-Overlay is too large
+### The overlay is too large
 
-Open Settings and reduce Overlay size to around 30–36 px for normal laptop use.
-A special laptop key does not work
-The key may be handled through firmware or a manufacturer-specific HID interface instead of a normal Windows virtual key. Such keys are not guaranteed to work with Broken Keys Overlay.
+Open Settings and reduce **Overlay size** to around:
 
+```text
+30–36 px
+```
 
-Manual build
+for normal laptop use.
 
-	Normally, you only need to run:
+### A special laptop key does not work
 
+The key may be handled by firmware or a manufacturer-specific HID interface instead of a normal Windows virtual key.
+
+Such keys are not guaranteed to work with Broken Keys Overlay.
+
+---
+
+## Manual Build
+
+Normally, you only need to run:
+
+```text
 build.bat
+```
 
-The build script uses a process equivalent to:
+The build script uses a publish process equivalent to:
+
+```bat
 dotnet publish -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true
+```
 
-The final .exe file is created at:
+The final executable is created at:
+
+```text
 bin\Release\net8.0-windows\win-x64\publish\BrokenKeysOverlay.exe
+```
 
-	Project status
+---
 
-Broken Keys Overlay is an independent utility project. It is not affiliated with, sponsored by, or developed by Microsoft.
+## Developer
+
+**Nguyen Khang Pham**
+
+- GitHub: https://github.com/khangkhangkhan-g
+- Email: nguyenkhangpham1306@gmail.com
+
+---
+
+## Project Status
+
+Broken Keys Overlay is an independent utility project.
+
+It is **not affiliated with, sponsored by, or developed by Microsoft**.
 
 Windows, .NET, and Microsoft are trademarks of Microsoft Corporation.
+
+---
+
+<div align="center">
+
+Built for keyboards that still work — except for *that one key*.
+
+</div>
+'''
+
+out = Path("/mnt/data/README_GITHUB_POLISHED.md")
+out.write_text(readme, encoding="utf-8")
+print(f"Created: {out}")
